@@ -1,4 +1,5 @@
 #include <ctime>
+#include <iomanip>
 #include <iostream>
 #include <map>
 #include <unordered_map>
@@ -149,17 +150,17 @@ int main() {
   results[15] = clock() - clk;
 
 
-  std::cout << "#### results\n";
-  std::cout << "    func()   | map     | umap\n";
-  std::cout << "    ---------+---------+--------\n";
-  std::cout << "    fill[]   | " << to_sec(results[0]) << " | " << to_sec(results[1]) << "\n";
-  std::cout << "    insert   | " << to_sec(results[2]) << " | " << to_sec(results[3]) << "\n";
-  std::cout << "    emplace  | " << to_sec(results[4]) << " | " << to_sec(results[5]) << "\n";
-  std::cout << "    change[] | " << to_sec(results[6]) << " | " << to_sec(results[7]) << "\n";
-  std::cout << "    at()     | " << to_sec(results[8]) << " | " << to_sec(results[9]) << "\n";
-  std::cout << "    read []  | " << to_sec(results[10]) << " | " << to_sec(results[11]) << "\n";
-  std::cout << "    read at  | " << to_sec(results[12]) << " | " << to_sec(results[13]) << "\n";
-  std::cout << "    remove   | " << to_sec(results[14]) << " | " << to_sec(results[15]) << "\n";
+  std::cout << std::setprecision(5) << "#### results\n"
+            << "    func()   | map     | umap\n"
+	    << "    ---------+---------+--------\n"
+	    << "    fill[]   | " << to_sec(results[0]) << " | " << to_sec(results[1]) << "\n"
+	    << "    insert   | " << to_sec(results[2]) << " | " << to_sec(results[3]) << "\n"
+	    << "    emplace  | " << to_sec(results[4]) << " | " << to_sec(results[5]) << "\n"
+	    << "    change[] | " << to_sec(results[6]) << " | " << to_sec(results[7]) << "\n"
+	    << "    at()     | " << to_sec(results[8]) << " | " << to_sec(results[9]) << "\n"
+	    << "    read []  | " << to_sec(results[10]) << " | " << to_sec(results[11]) << "\n"
+	    << "    read at  | " << to_sec(results[12]) << " | " << to_sec(results[13]) << "\n"
+	    << "    remove   | " << to_sec(results[14]) << " | " << to_sec(results[15]) << "\n";
 
   return 0;
 }
